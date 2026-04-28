@@ -11,6 +11,7 @@ public class TADArrList <T>{
 	public TADArrList(String nombre){
 		super();
 		this.nombre = nombre;
+		this.TAD = new ArrayList<>();
 	}
 	
 	public String getNombre() {
@@ -24,10 +25,6 @@ public class TADArrList <T>{
 				 
 	}
 	
-	// longitud = 5
-	// [1,  2,  3,  4,  5]
-	// [0] [1] [2] [3] [5]
-	// [
 	public void imprimirArrayList() {
 	  for (int i = 0; i < TAD.size(); i++) {
 		  if(i == 0) System.out.print("[");
@@ -37,23 +34,15 @@ public class TADArrList <T>{
 			 System.out.print(TAD.get(i));
 		 }
 		 
-		 if(i == TAD.size() - 1) System.out.print("]\n");
+		 if(i == TAD.size() - 1)
+		  System.out.print("]\n");
 	}
 	  
 	  
 	}
 	
 	public Boolean insertarElemento(T dato) {
-		boolean resul = false;
-		for (int i = 0; i < TAD.size(); i++) {
-			if(TAD.get(i) == null) {
-				TAD.set(i, dato);
-				resul = true;
-				i = TAD.size();
-			}
-		}
-		
-		return resul;
+		return TAD.add(dato);
 	}
 	
 	public Boolean insertElement(T dato, int index) {

@@ -157,6 +157,8 @@ public class mainTAD {
 		System.out.println(                "Lista Elementos Final              ");
 		System.out.println("---------------------------------------------------");
 		TADList.imprimirVector();
+		System.out.println("---------------------------------------------------");
+		input.close();
 	}
 }
 

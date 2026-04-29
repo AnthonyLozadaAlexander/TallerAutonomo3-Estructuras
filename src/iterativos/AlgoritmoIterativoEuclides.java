@@ -1,4 +1,4 @@
-package Recursivos;
+package iterativos;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

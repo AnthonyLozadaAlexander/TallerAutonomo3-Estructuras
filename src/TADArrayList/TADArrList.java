@@ -17,6 +17,10 @@ public class TADArrList <T>{
 		return nombre;
 	}
 	
+	public int longitud() {
+		return TAD.size(); 
+	}
+	
 	@Override
 	public String toString() {
 		return "TADArrList:" + TAD +   

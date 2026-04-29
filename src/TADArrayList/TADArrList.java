@@ -33,37 +33,35 @@ public class TADArrList <T>{
 			} else {
 				System.out.print(TAD.get(i));
 			}
-
-			if (i == TAD.size() - 1)
-				System.out.print("]\n");
+				
 		}
+		
+		System.out.println("]\n");
 
 	}
 	
 	public void imprimirVectorCompleto() {
 		System.out.print("[");
 		for (int i = 0; i < TAD.size(); i++) {
-			if(TAD.get(i) != null) {
-			if (i == 0)
-				
-			if (i <= TAD.size() - 2) {
-				System.out.print(TAD.toString() + " Elemento: " + TAD.get(i) + ", ");
-			} else {
-				System.out.print(TAD.toString() + " Elemento: " + TAD.get(i));
-			}
+			if (TAD.get(i) != null) {
 
-		}
+				if (i <= TAD.size() - 2) {
+					System.out.print(" ["+i +"] " + TAD.toString() + " Elemento: " + TAD.get(i) + ", ");
+				} else {
+					System.out.print(" ["+i +"] " + TAD.toString() + " Elemento: " + TAD.get(i));
+				}
+
+			}
 		}
 		System.out.print("]\n");
-		
+
 	}
 	
 	public Boolean insertarElemento(T dato) {
 		return TAD.add(dato);
-		
 	}
 	
-	public Boolean insertElement(T dato, int index) {
+	public Boolean insertarElementoIndex(T dato, int index) {
 		boolean resul = false;
 		if(index >= 0 && index < TAD.size() && TAD.get(index) == null) {
 			TAD.add(index, dato);
@@ -73,11 +71,11 @@ public class TADArrList <T>{
 		return resul;
 	}
 	
-	public Boolean modificarElemento(T dato) {
+	public Boolean modificarElementoDato(T datoAntiguo, T datoNuevo) {
 		boolean resul = false;
 		for(int i = 0; i < TAD.size(); i++){
-			if(TAD.get(i) != null && TAD.get(i).equals(dato)) {
-				TAD.set(i, dato);
+			if(TAD.get(i) != null && TAD.get(i).equals(datoAntiguo)) {
+				TAD.set(i, datoNuevo);
 				resul = true;
 				i = TAD.size();
 			}
@@ -86,7 +84,7 @@ public class TADArrList <T>{
 		return resul;
 	}
 	
-	public Boolean modificarElemento(T dato, int index) {
+	public Boolean modificarElementoIndice(T dato, int index) {
 		boolean resul = false;
 		if(index >= 0 && index < TAD.size() && TAD.get(index) != null){
 			TAD.set(index, dato);
@@ -119,7 +117,7 @@ public class TADArrList <T>{
 		return -1;
 	}
 	
-	public Boolean eliminarElemento(int index) {
+	public Boolean eliminarElementoIndice(int index) {
 		boolean resul = false;
 		// que no haya desborde de indice y que el elemento a eliminar no sea null
 		if(index >= 0 && index < TAD.size() && TAD.get(index) != null) {
@@ -130,18 +128,13 @@ public class TADArrList <T>{
 		return resul;
 	}
 	
-	public Boolean eliminarElemento(T dato) {
+	public Boolean eliminarElementoDato(T dato) {
 		boolean resul = false;
 		if(dato == null) {
 			return resul;
-		}
-		
-		for(int i = 0; i < TAD.size(); i++) {
-		  	if(TAD.get(i) != null && TAD.get(i).equals(dato)) {
-		  		TAD.remove(i);
-		  		resul = true;
-		  		i = TAD.size();
-		  	}
+		}else {
+			TAD.remove(dato);
+			resul = true;
 		}
 		
 		return resul;

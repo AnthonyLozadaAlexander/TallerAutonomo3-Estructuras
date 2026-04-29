@@ -4,7 +4,6 @@ import TADArrayList.TADArrList;
 
 public class mainTAD {
     public static void main(String[] args) {
-    	TADArrList<String> TADList = new TADArrList<String>("Lista De Nombres"); 
+    	TADArrList<Integer> TADList = new TADArrList<Integer>("Lista De Nombres"); 
     }
-
 }
